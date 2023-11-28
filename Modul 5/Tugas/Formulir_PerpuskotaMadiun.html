@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px; 
+            margin: auto;
+        }
+
+        label {
+            display: block; 
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Formulir Perpustakaan Kota Madiun</h2>
+
+    <form action="proses_formulir.html" method="post">
+        <label for="nama">Nama :</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="alamat">Alamat :</label>
+        <input type="text" id="alamat" name="alamat" required>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telepon">Nomor Telepon :</label>
+        <input type="tel" id="telepon" name="telepon" required>
+
+        <label for="buku">Judul Buku yang Dipinjam :</label>
+        <input type="text" id="buku" name="buku" required>
+
+        <label for="durasi">Durasi Peminjaman (hari) :</label>
+        <input type="number" id="durasi" name="durasi" required>
+
+        <label for="catatan">Catatan :</label>
+        <textarea id="catatan" name="catatan" rows="4" cols="50"></textarea>
+
+        <label for="kategori">Kategori Buku :</label>
+        <select id="kategori" name="kategori">
+            <option value="fiksi">Fiksi</option>
+            <option value="non-fiksi">Non-Fiksi</option>
+            <option value="sejarah">Sejarah</option>
+        </select>
+
+        <button type="submit">Kirim Formulir</button>
+    </form>
+</body>
+</html>

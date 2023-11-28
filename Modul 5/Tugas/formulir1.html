@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <tittle>Belajar Membuat Form</tittle>
+        <style>
+            body {
+                font-family: Arial, sans-serif; 
+                margin: 20px; 
+            }
+            form{
+                max-width: 400px; 
+                margin: auto; 
+            }
+            label{
+                display: block; 
+                margin-bottom: 5px; 
+            }
+            input, select, textarea{
+                margin-bottom: 10px; 
+            }
+        </style>
+    </head>
+    <body>
+        <form action="formulir1.html" method="get">
+            <label for="nama">Nama</label>
+            <input type="text" name="nama" id="nama" value="Nama Kamu" />
+            <br>
+            <label for="password">Password:</label> 
+            <input type="password" name="password" id="password" /> 
+            <br>
+            <label>Jenis Kelamin :</label>
+            <input type="radio" name="Jenis_Kelamin" value="Laki-Laki" />
+            Laki-Laki
+            <input type="radio" name="Jenis Kelamin" value="Perempuan" />
+            Perempuan
+            <br>
+            <label>Hobi :</label>
+            <input type="checkbox" name="Hobi_Baca" /> Membaca Buku
+            <input type="checkbox" name="Hobi_nulis"  /> Menulis
+            <input type="checkbox" name="Hobi_Mancing" /> Memancing
+            <br>
+            <label>Asal Kota :</label>
+            <select name="Asal_Kota">
+                <option value="Kota Jakarta">Jakarta</option>
+                <option value="Kota Bandung">Bandung</option>
+                <option value="Kota Semarang">Semarang</option>
+            </select>
+            <label for="Komentar">Komentar Anda :</label>
+            <textarea name="komentar" id="komentar" rows="5" cols="20">Silahkan Katakan Isi Hati Anda</textarea> 
+            <input type="submit" value="Mulai Proses!">    
+        </form>
+    </body>
+</html>
