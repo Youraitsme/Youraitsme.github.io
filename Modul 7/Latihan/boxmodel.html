@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <tittle>CSS Layouting : Display </tittle> <br> <br>
+        
+        <style>
+            .satu{
+                width: 120px;
+                height: 120px;
+                background-color: lightblue;
+                margin-top: 10px; /*untuk membuat margin (jarak tepi paling luar yang dapat diberikan)*/
+                margin-left: 30px;
+                border-left: 5px dashed grey; /*untuk membuat border (garis tepi pada elemen)*/
+                padding-left: 20px;/*untuk membuat padding (ruang atau spasi antara border dan konten)*/
+                display: inline-block;
+            }
+            .dua{
+                width: 100px;
+                height: 100px;
+                background-color: purple;
+                margin-left: 10px;
+                border-top: 5px dotted white;
+                padding-top: 20px;
+                box-sizing: border-box;/*untuk membuat box sizing (mengatasi ukuran konten yang membengkak karena padding dan border)*/
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="satu">SATU</div>
+        <div class="dua">DUA</div>
+    </body>
+</html>

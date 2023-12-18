@@ -1,0 +1,188 @@
+<!--Display-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .navigasi{text-align: center;}
+            .navigasi li{
+                display: inline-block;
+                background-color: red;
+                width: 150px;
+                height: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>SELAMAT DATANG DI WEBKU</h1>
+        </div>
+        <div class="navigasi">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">PROFIL</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <h2>Bagian ini adalah isi web</h2>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam et quia nobis atque aliquid quos eligendi molestias quasi libero, perferendis tempore, 
+                a distinctio maxime soluta reiciendis cupiditate sed similique debitis.</p>
+        </div>
+    </body>
+</html>
+
+<!--Dimension-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .satu{
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+            }
+            .dua{
+                width: 100%;
+                height: 20%;
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="satu">WELCOME</div><br>
+        <div class="dua">Hello World</div>
+    </body>
+</html>
+
+<!--Overflow-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .satu{
+                width: 200px;
+                height: 200px;
+                background-color: pink;
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body><br>
+        <div class="satu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia in quam cupiditate animi ea reiciendis eaque ducimus aliquam earum. 
+            Obcaecati animi quo, iusto quos accusamus accusantium laborum velit consequuntur fuga.</div>
+    </body>
+</html>
+
+<!--Float-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <tittle>Portofolio </tittle>
+        <style>
+            .container{
+                background-color: red;
+                margin: auto;
+                width: 500px;
+                padding: 5px;
+                overflow: hidden;
+            }
+            .gambar{
+                height: 150px;
+                width: 150px;
+                float: left;
+                margin: 5px;
+            }
+            .tulisan{
+                margin-left: 170px;
+            }
+            .clear{
+                clear: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img class="gambar" src="unimpa.jpg">
+            <p class="tulisan">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Inventore quasi cupiditate eveniet. Consequatur nesciunt aspernatur dolorum laborum quasi fuga odit vel, 
+                quam facilis quisquam expedita illo inventore earum fugit pariatur. </p>
+        </div>
+        <div class="clear"></div>
+    </body>
+</html>
+
+<!--Image Gallery-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <tittle> Portofolio </tittle>
+        <style>
+            .container{
+                margin: auto;
+                width: 500px;
+            }
+            .galeri{
+                width: 100px;
+                height: 100px;
+                margin: 5px;
+                background-color: lightgreen;
+                float: left;
+                text-align: center;
+                line-height: 100px;
+            }
+            .clear{
+                clear: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="galeri">1</div>
+            <div class="galeri">2</div>
+            <div class="galeri">3</div>
+            <div class="galeri">4</div>
+            <div class="galeri">5</div>
+            <div class="galeri">6</div>
+            <div class="galeri">7</div>
+        </div>
+        <div class="clear"></div>
+    </body>
+</html>
+
+<!--Multi-Column Layout-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <tittle> Portofolio </tittle>
+        <style>
+            .container{
+                margin: auto;
+                width: 800px;
+                height: 2000px;
+            }
+            .sidebar, .main, .rightbar{
+                width: 100px;
+                height: 100px;
+            }
+            .sidebar{
+                background-color: lightgreen;
+            }
+            .main{
+                background-color: lightgrey;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+            }
+            .rightbar{
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">1</div>
+            <div class="main">2</div>
+            <div class="rightbar">3</div>
+        </div>
+    </body>
+</html>
