@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+      }
+      .bg-img {
+        background: url(img/bg-hero.jpg);
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+      }
+      .bg-img:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+      }
+      .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 999;
+        text-align: center;
+        padding: 60px 32px;
+        width: 370px;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.04);
+        box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+      }
+      .content header {
+        color: white;
+        font-size: 33px;
+        font-weight: 600;
+        margin: 0 0 35px 0;
+        font-family: "Montserrat", sans-serif;
+      }
+      .field {
+        position: relative;
+        height: 45px;
+        width: 100%;
+        display: flex;
+        background: rgba(255, 255, 255, 0.94);
+        margin-top: 16px;
+      }
+      .field span {
+        color: #222;
+        width: 40px;
+        line-height: 45px;
+      }
+      .field input {
+        height: 100%;
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #222;
+        font-size: 16px;
+        font-family: "Poppins", sans-serif;
+      }
+      .space {
+        margin-top: 16px;
+      }
+
+      .field button {
+        background: #ffa600;
+        border: 1px solid #000000;
+        color: white;
+        font-size: 18px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        width: 100%;
+      }
+      .field .hello1[type="submit"]:hover {
+        background: #2691d9;
+      }
+
+      .button {
+        font-size: 15px;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        margin-top: 10px;
+      }
+      a {
+        color: #000000 !important;
+        text-decoration: none !important;
+      }
+      a:hover {
+        text-decoration: underline !important;
+      }
+
+      #box2 {
+        display: none;
+      }
+
+      #dashboard {
+        display: none;
+      }
+
+      .box3 {
+        display: flex;
+        z-index: 999;
+        position: absolute;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 13px;
+        border-bottom: solid white;
+        padding-bottom: 18px;
+      }
+
+      #dash {
+        color: white;
+        margin-left: 40px;
+        font-size: 27px;
+      }
+
+      #log-out {
+        background: #3498db;
+        border: 1px solid #2691d9;
+        color: white;
+        font-size: 18px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        margin-right: 40px;
+        padding: 2px 16px 2px 15px;
+      }
+
+      #log-out:hover {
+        background: #2691d9;
+      }
+
+      #heading {
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        position: absolute;
+        z-index: 999;
+        margin-left: 25px;
+        margin-top: 110px;
+      }
+    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <title>LOGIN FORM</title>
+  </head>
+  <body>
+    <div class="bg-img">
+      <div class="content" id="box1">
+        <header>Login Form</header>
+        <form onsubmit="handleFormSubmit1(event)">
+          <div class="field">
+            <span class="fa-solid fa-user"></span>
+            <input type="text" placeholder="Username" id="username" />
+          </div>
+
+          <div class="field space">
+            <span class="fa-solid fa-lock"></span>
+            <input type="password" placeholder="Password" id="password" />
+          </div>
+          <div class="field">
+            <button><a href="edit.php">LOGIN</a></button>
+          </div>
+        </form>
+        <div class="button">
+          Don't have account?
+          <a id="sign-up" class="text-primary" href="#">Signup Now</a>
+        </div>
+      </div>
+
+      <div class="content" id="box2">
+        <header>SignUp Form</header>
+        <form onsubmit="handleFormSubmit(event)">
+          <div class="field">
+            <span class="fa-solid fa-user"></span>
+            <input type="text" placeholder="Username" id="username2" />
+          </div>
+          <div class="field space">
+            <span class="fa-solid fa-at"></span>
+            <input type="text" placeholder="Email" id="email" />
+          </div>
+          <div class="field space">
+            <span class="fa-solid fa-lock"></span>
+            <input type="password" placeholder="Password" id="password2" />
+          </div>
+
+          <div class="field">
+            <button type="submit">SIGN UP</button>
+          </div>
+        </form>
+        <div class="button">
+          Already have an account?
+          <a id="sign-in" class="text-primary" href="#">Signin Now</a>
+        </div>
+      </div>
+      <div id="dashboard">
+        <div class="box3">
+          <div id="dash">Dashboard</div>
+          <div id="log-out">Log Out</div>
+        </div>
+
+        <h1 id="heading"></h1>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+    <script>
+      var page1 = document.getElementById("box1");
+
+      var page2 = document.getElementById("box2");
+      var page3 = document.getElementById("dashboard");
+
+      var button1 = document.getElementById("sign-up");
+
+      var button2 = document.getElementById("sign-in");
+
+      var logOut = document.getElementById("log-out");
+
+      var heading = document.getElementById("heading");
+      var allInputs = document.querySelectorAll("input");
+
+      function handleFormSubmit(e) {
+        e.preventDefault();
+
+        var username = document.getElementById("username2").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password2").value;
+
+        // form validation
+        if (username === "" || email === "" || password === "") {
+          swal("", "Please fill the empty fields!", "error");
+
+          return false;
+        }
+
+        var status = validateForm(username, email, password);
+
+        if (status) {
+          var users = [
+            {
+              username: username,
+              email: email,
+              password: password,
+            },
+          ];
+
+          var users2;
+          if (localStorage.getItem("users")) {
+            users2 = JSON.parse(localStorage.getItem("users"));
+          } else {
+            users2 = [];
+          }
+          users = users.concat(users2);
+          localStorage.setItem("users", JSON.stringify(users));
+        }
+      }
+
+      function validateForm(username, email, password) {
+        if (username.length < 3) {
+          swal("", "Username must be atleast 4 characters long!", "error");
+          allInputs.forEach((singleInput) => (singleInput.value = ""));
+          return false;
+        } else if (username.length > 20) {
+          swal("", "Username cannot exceed 20 characters long!", "error");
+          allInputs.forEach((singleInput) => (singleInput.value = ""));
+          return false;
+        }
+        if (password.length < 6) {
+          swal("", "Password must be alteast 6 characters long!", "error");
+          allInputs.forEach((singleInput) => (singleInput.value = ""));
+          return false;
+        }
+
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        if (!email.match(emailPattern)) {
+          swal("", "Invalid email format!", "warning");
+          allInputs.forEach((singleInput) => (singleInput.value = ""));
+
+          return false;
+        }
+        allInputs.forEach((singleInput) => (singleInput.value = ""));
+        swal("", "Successfully signed up!", "success");
+        return true;
+      }
+
+      function handleFormSubmit1(e) {
+        e.preventDefault();
+        var allInputs = document.querySelectorAll("input");
+
+        var username1 = document.getElementById("username").value;
+        var password1 = document.getElementById("password").value;
+
+        var users2 = JSON.parse(localStorage.getItem("users") || []);
+
+        // }
+        if (username1 == "" || password1 == "") {
+          swal("", "Please fill the empty fields!", "error");
+        }
+
+        const matchedUsers = users2.filter((user) => user.username === username1);
+
+        if (matchedUsers.length === 1) {
+          // If a user with the provided username exists
+          const user = matchedUsers[0];
+          if (user.password === password1) {
+            // Passwords match, login successful
+            page1.style.display = "none";
+            page3.style.display = "block";
+            heading.innerHTML = "Welcome " + username1 + ",";
+          } else {
+            // Passwords do not match
+            swal("", "Password does not exist!", "error");
+            allInputs.forEach((singleInput) => (singleInput.value = ""));
+          }
+        } else if (matchedUsers.length === 0) {
+          // No user found with the provided username
+          swal("", "Username does not exist!", "error");
+        } else {
+          swal("", "Multiple users with the same username!", "error");
+        }
+
+        allInputs.forEach((singleInput) => (singleInput.value = ""));
+      }
+
+      button1.addEventListener("click", function () {
+        page1.style.display = "none";
+        page2.style.display = "block";
+      });
+
+      button2.addEventListener("click", function () {
+        page1.style.display = "block";
+        page2.style.display = "none";
+      });
+
+      logOut.addEventListener("click", function () {
+        page3.style.display = "none";
+        page1.style.display = "block";
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
